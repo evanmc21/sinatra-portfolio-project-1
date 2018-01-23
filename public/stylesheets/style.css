@@ -1,0 +1,19 @@
+h1 {
+    color: darkred;
+    font-family: 'Henny Penny', cursive;
+    font-size: 45px;
+    padding-left: 60px;
+    text-shadow: 2px 2px #d4b049;
+}
+
+body {
+    background-image: url('/images/castle.jpg');
+    background-repeat: no-repeat;
+    font-family: 'Henny Penny', cursive;
+}
+
+label {
+    color: darkred;
+    text-shadow: 2px 2px #d4b049;
+}
+
