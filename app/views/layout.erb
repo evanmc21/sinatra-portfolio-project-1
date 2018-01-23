@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fantasy Quidditch</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+  </head>
+
+  <body>
+    <div class="container">
+      
+        <form action="/session" method="post">
+          <input type="hidden" name="_method" value="delete" />
+          <input type="submit" value="logout">
+        </form>
+ 
+      <%= yield %>
+    </div>
+  </body>
+</html>
