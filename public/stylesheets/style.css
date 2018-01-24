@@ -1,3 +1,16 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Henny Penny', cursive;
+    text-decoration: none;
+    background-image: url('/images/wallpaper.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 h1 {
     color: darkred;
     font-family: 'Henny Penny', cursive;
@@ -6,10 +19,12 @@ h1 {
     text-shadow: 2px 2px #d4b049;
 }
 
-body {
-    background-image: url('/images/castle.jpg');
-    background-repeat: no-repeat;
-    font-family: 'Henny Penny', cursive;
-    text-decoration: none;
+.w3-teal, .w3-hover-teal:hover {
+    color:#fff;
+    background-color: #566c46;
 }
 
+a {
+    color:#fff;
+    font-family: 'Lato', sans-serif;
+}
