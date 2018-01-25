@@ -1,1 +1,19 @@
-<h1>Edit My Quidditch Team:</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Edit My Quidditch Team:</h1>
+        <form action="/teams/<%=@team.id%>" method="post">
+            <input type="hidden" name="_method" value="patch" id="hidden">
+                    <label for="name">Name: <input type="text" name="name" id="name" value="<%= @team.name %>"> </label><br></br>
+                    <label for="chaser">Chaser: <input type="text" name="chaser" id="chaser" value="<%= @team.chaser %>"> </label><br></br>
+                    <label for="beater">Beater: <input type="text" name="beater" id="beater" value="<%= @team.beater %>"> </label><br></br>
+                    <label for="keeper">Keeper: <input type="text" name="keeper" id="keeper" value="<%= @team.keeper %>"> </label><br></br>
+                    <label for="seeker">Seeker: <input type="text" name="seeker" id="seeker" value="<%= @team.seeker %>"> </label><br></br>
+            <button class="w3-button w3-teal">Submit</button>
+        </form>
+    </body>
+</html>
