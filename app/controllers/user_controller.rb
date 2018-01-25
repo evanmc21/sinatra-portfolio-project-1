@@ -4,12 +4,51 @@ class UserController < ApplicationController
         erb :index
     end
     
-    get '/login' do
-        erb :'users/user_login'
+    get '/signup' do
+        if Helpers.logged_in?(session)
+            redirect to '/teams'
+        else
+            erb :'users/user_signup'
+        end
     end
     
-    get '/signup' do
-       erb :'users/user_signup' 
+    post '/signup' do
+            user = User.create(username: params[:username], email: params[:email], password: params[:password])
+        session[:user_id] = user.id
+        if Helpers.logged_in?(session)
+          redirect to '/teams'
+        else
+          redirect to '/signup'
+        end
+    end
+    
+    get '/login' do
+        if Helpers.logged_in?(session)
+          redirect to '/teams'
+        else 
+          erb :'/users/user_login'
+        end
+    end
+    
+    post '/login' do
+        user = User.find_by(username: params[:username])
+
+        if user && user.authenticate(params[:password])
+          session[:user_id] = user.id
+          redirect to '/teams'
+        else
+          erb :'users/user_login'
+        end
+    end
+    
+    get '/users/:slug' do
+        @teams = User.find_by_slug(params[:slug]).teams
+        erb :'/users/user_index'
+    end
+    
+    delete '/session' do
+        session.clear
+        redirect to '/'
     end
     
 end
