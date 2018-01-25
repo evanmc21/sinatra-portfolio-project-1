@@ -6,8 +6,10 @@
     </head>
     <body>
         <h1>Quidditch Teams:</h1>
+            <ol>
             <% @teams.each do |team| %>
-              <p><%= team.name %></p>
+              <li> <%= team.name %></li>
             <% end %>
+            </ol>
     </body>
 </html>
