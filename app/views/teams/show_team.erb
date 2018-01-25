@@ -1,1 +1,20 @@
-<h1>My Quidditch Team:</h1>
+<!DOCTYPE html>
+    <head>
+          <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">  
+    </head>
+        <body>
+            <h1>My Quidditch Team:</h1>
+            <h2>Team Name: <%= @team.name %></h2>
+            <h3>Chaser: <%= @team.chaser %></h3>
+            <h3>Beater: <%= @team.beater %></h3>
+            <h3>Keeper: <%= @team.keeper %></h3>
+            <h3>Seeker: <%= @team.seeker %></h3>
+            
+            <button class="w3-button w3-teal"><a href="/teams/<%= @team.id %>/edit">Edit My Team</a></button>
+            <form action="/teams/<%= @team.id %>/delete" method ="post">
+               <input id="hidden" type="hidden" name="_method" value="delete">
+               <button class="w3-button w3-teal">Delete Team</button> 
+            </form>
+        </body>
+</html>
