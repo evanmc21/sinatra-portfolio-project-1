@@ -60,4 +60,14 @@ class TeamController < ApplicationController
     end
   end
   
+  delete '/teams/:id/delete' do
+    team = Team.find(params[:id])
+    if Helpers.current_user(session).id == team.user_id
+      team.delete
+      redirect to "users/#{Helpers.current_user(session).slug}"
+    else
+      redirect to "teams/#{team.id}"
+    end
+  end
+  
 end
