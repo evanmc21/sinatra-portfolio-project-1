@@ -1,4 +1,4 @@
-team_name_list = {
+team = {
     "Gryffindor" => {
     },
     "Slytherin" => {
@@ -9,7 +9,7 @@ team_name_list = {
     }
 }
 
-team_name_list.each do |name|
+team.each do |name|
     n = Team.name
     n.name = name
     n.save
