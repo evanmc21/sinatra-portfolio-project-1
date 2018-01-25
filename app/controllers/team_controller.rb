@@ -25,6 +25,15 @@ class TeamController < ApplicationController
         else
           redirect to '/teams/new'
         end
-  end
+    end
     
+    get '/teams/:id' do
+    if Helpers.logged_in?(session)
+      @team = Team.find(params[:id])
+      erb :'teams/show_team'
+    else
+      redirect to '/login'
+    end
+  end
+  
 end
