@@ -3,7 +3,6 @@ body, html {
 }
 
 body {
-    font-family: 'Henny Penny', cursive;
     text-decoration: none;
     background-image: url('/images/wallpaper.jpg');
     background-position: center;
@@ -28,3 +27,4 @@ a {
     color:#fff;
     font-family: 'Lato', sans-serif;
 }
+
