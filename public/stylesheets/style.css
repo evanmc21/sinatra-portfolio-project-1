@@ -18,6 +18,10 @@ h1 {
     text-shadow: 2px 2px #d4b049;
 }
 
+h2, h3 {
+    font-family: 'Lato', sans-serif;
+}
+
 .w3-teal, .w3-hover-teal:hover {
     color:#fff;
     background-color: #566c46;
@@ -26,5 +30,6 @@ h1 {
 a {
     color:#fff;
     font-family: 'Lato', sans-serif;
+    text-decoration: none;
 }
 
