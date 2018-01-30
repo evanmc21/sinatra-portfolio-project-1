@@ -4,15 +4,66 @@
     <title>Fantasy Quidditch</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">
-    <style>a {font-size:40px;}</style>
   </head>
+  
+  <style>
+        body {font-family: 'Lato';}
+        * {box-sizing: border-box}
+        
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+        
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+        
+        /* Set a style for all buttons */
+        button {
+            background-color: #566c46;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        
+        button:hover {
+            opacity:1;
+        }
+        
+        /* Add padding to container elements */
+        .container {
+            padding: 16px;
+            background-color: #d8bf8b96;
+        }
+        
+        /* Clear floats */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+  
   <body>
-      <div class="container">
       <h1>Welcome to Fantasy Quidditch!</h1>
-          <div class="w3-bar" style="padding-left: 110px">
-          <button class="w3-button w3-teal"><a href="/login" style="text-decoration:none">Login</a></button>
-          <button class="w3-button w3-teal"><a href="/signup" style="text-decoration:none">Sign Up</a></button><br></br>
-          </div>
-      </div>
+        <div class="w3-bar" >
+        <button class="w3-button w3-teal"><a href="/login" style="text-decoration:none">Login</a></button>
+        <button class="w3-button w3-teal"><a href="/signup" style="text-decoration:none">Sign Up</a></button><br></br>
+        </div>
   </body>
 </html>

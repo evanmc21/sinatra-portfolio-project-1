@@ -5,21 +5,28 @@ body, html {
 body {
     text-decoration: none;
     background-image: url('/images/wallpaper.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px;
 }
 
 h1 {
     color: darkred;
     font-family: 'Henny Penny', cursive;
     font-size: 45px;
-    padding-left: 60px;
     text-shadow: 2px 2px #d4b049;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 80px;
 }
 
 h2, h3 {
     font-family: 'Lato', sans-serif;
+}
+
+.w3-bar {
+    text-align:center;
 }
 
 .w3-teal, .w3-hover-teal:hover {
@@ -36,3 +43,4 @@ a {
 ol li {
     font-family: 'Lato', sans-serif;
 }
+
