@@ -37,13 +37,18 @@ class UserController < ApplicationController
           session[:user_id] = user.id
           redirect to '/teams'
         else
-          erb :'users/user_login'
+          erb :'users/login_error'
         end
     end
     
     get '/users/:slug' do
-        @teams = User.find_by_slug(params[:slug]).teams
+        @user = User.find_by_slug(params[:slug])
         erb :'/users/user_index'
+    end
+    
+    get '/logout' do
+        session.clear
+        redirect to '/login'
     end
     
     delete '/session' do
