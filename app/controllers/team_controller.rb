@@ -20,7 +20,7 @@ class TeamController < ApplicationController
     post '/teams' do
         team = Team.create(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker], user_id: session[:user_id])
     
-        if team.name != ""
+        if team.name != "" && team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
           redirect to "teams/#{team.id}"
         else
           redirect to '/teams/new'
@@ -53,7 +53,7 @@ class TeamController < ApplicationController
     team = Team.find(params[:id])
     team.update(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker])
 
-    if team.name != ""
+    if team.name != "" && team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
       redirect to "teams/#{team.id}"
     else
       redirect to "teams/#{team.id}/edit"
