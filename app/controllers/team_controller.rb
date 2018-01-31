@@ -65,7 +65,7 @@ class TeamController < ApplicationController
           @team.delete
           redirect '/teams'
         else
-          redirect 'teams/#{team.id}'
+          redirect 'teams'
         end
     end
   end

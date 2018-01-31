@@ -48,11 +48,6 @@ class UserController < ApplicationController
     
     get '/logout' do
         session.clear
-        redirect to '/login'
-    end
-    
-    delete '/session' do
-        session.clear
         redirect to '/'
     end
     
