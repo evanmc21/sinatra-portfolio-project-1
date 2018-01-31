@@ -4,14 +4,77 @@
         <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
         <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">
     </head>
+     <style>
+  body {font-family: 'Lato';}
+  * {box-sizing: border-box}
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+  }
+  
+  hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+  }
+  
+  h1 {
+      margin-top: 5px;
+      margin-bottom: 5px;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+      background-color: #566c46;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+  }
+  
+  button:hover {
+      opacity:1;
+  }
+  
+  /* Add padding to container elements */
+  .container {
+      padding: 16px;
+      background-color: #d8bf8bb8;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+
+</style>
     <body>
         <h1>Create New Quidditch Team:</h1>
         <form action='/teams' method="post">
-            <label for="name">Name: <input type="text" name="name" id="name"> </label><br></br>
-            <label for="chaser">Chaser: <input type="text" name="chaser" id="chaser"> </label><br></br>
-            <label for="beater">Beater: <input type="text" name="beater" id="beater"> </label><br></br>
-            <label for="keeper">Keeper: <input type="text" name="keeper" id="keeper"> </label><br></br>
-            <label for="seeker">Seeker: <input type="text" name="seeker" id="seeker"> </label><br></br>
+            <label><b>Team Name:</b></label>
+            <input type="text" name="name" placeholder="Enter Team Name" required>
+            <label><b>Chaser:</b></label>
+            <input type="text" name="chaser"placeholder="Enter Chaser" required>
+            <label><b>Beater:</b></label>
+            <input type="text" name="beater" placeholder="Enter Beater" required>
+            <label><b>Keeper:</b></label>
+            <input type="text" name="keeper" placeholder="Enter Keeper" required>
+            <label><b>Seeker:</b></label>
+            <input type="text" name="seeker" placeholder="Enter Seeker" required>
             <button class="w3-button w3-teal">Submit</button>
         </form>
     </body>
