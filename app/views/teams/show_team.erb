@@ -1,10 +1,68 @@
 <!DOCTYPE html>
     <head>
-          <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">  
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">  
     </head>
+         <style>
+  body {font-family: 'Lato';}
+  * {box-sizing: border-box}
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+  }
+  
+  h1 {
+      margin-top: 5px;
+      margin-bottom: 5px;
+  }
+  
+  hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+      background-color: #566c46;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+  }
+  
+  button:hover {
+      opacity:1;
+  }
+  
+  /* Add padding to container elements */
+  .container {
+      padding: 16px;
+      background-color: #d3bc8bde;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+
+</style>
         <body>
-            <h1>My Quidditch Team:</h1>
+            <h1><%=@team.user.username%> 's Quidditch Team:</h1>
             <h2>Team Name: <%= @team.name %></h2>
             <h3>Chaser: <%= @team.chaser %></h3>
             <h3>Beater: <%= @team.beater %></h3>
