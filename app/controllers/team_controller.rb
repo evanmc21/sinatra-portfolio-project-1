@@ -19,8 +19,8 @@ class TeamController < ApplicationController
     
     post '/teams' do
         team = Team.create(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker], user_id: session[:user_id])
-    
-        if team.name != "" && team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
+        team.save
+        if team.name != "" #&& team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
           redirect to "teams/#{team.id}"
         else
           redirect to '/teams/new'
@@ -28,24 +28,22 @@ class TeamController < ApplicationController
     end
     
     get '/teams/:id' do
-    if Helpers.logged_in?(session)
-      @team = Team.find(params[:id])
-      erb :'teams/show_team'
-    else
-      redirect to '/login'
+      if Helpers.logged_in?(session)
+        @team = Team.find_by(id: params[:id])
+        erb :'teams/show_team'
+      else
+        redirect to '/login'
+      end
     end
-  end
   
   get '/teams/:id/edit' do 
       if Helpers.logged_in?(session) 
-        @team = Team.find(params[:id])
+        @team = Team.find_by(id: params[:id])
           if Helpers.current_user(session).id == @team.user_id
             erb :'teams/edit_team'
           else
-            redirect to '/teams'
+            redirect '/login'
           end
-        else
-          redirect to '/login'
       end
   end
   
@@ -61,12 +59,14 @@ class TeamController < ApplicationController
   end
   
   delete '/teams/:id/delete' do
-    team = Team.find(params[:id])
-    if Helpers.current_user(session).id == team.user_id
-      team.delete
-      redirect to "users/#{Helpers.current_user(session).slug}"
-    else
-      redirect to "teams/#{team.id}"
+    if Helpers.logged_in?(session)
+      @team = Team.find_by(id: params[:id])
+        if Helpers.current_user(session).id == @team.user_id
+          @team.delete
+          redirect '/teams'
+        else
+          redirect 'teams/#{team.id}'
+        end
     end
   end
   

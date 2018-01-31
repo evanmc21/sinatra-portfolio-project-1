@@ -13,12 +13,12 @@ class UserController < ApplicationController
     end
     
     post '/signup' do
-            user = User.create(username: params[:username], email: params[:email], password: params[:password])
+        user = User.create(username: params[:username], email: params[:email], password: params[:password])
         session[:user_id] = user.id
         if Helpers.logged_in?(session)
-          redirect to '/teams'
+            redirect '/users/user_index'
         else
-          redirect to '/signup'
+            erb :'users/signup_error'
         end
     end
     
