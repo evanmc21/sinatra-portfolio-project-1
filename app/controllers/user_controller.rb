@@ -51,4 +51,9 @@ class UserController < ApplicationController
         redirect to '/'
     end
     
+    delete '/session' do
+        session.clear
+        redirect "/"
+    end
+    
 end
