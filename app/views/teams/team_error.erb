@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
     <head>
         <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">  
     </head>
-     <style>
-     body {font-family: 'Lato';}
+         <style>
+         body {font-family: 'Lato';}
       * {box-sizing: border-box}
-        
+
       input[type=text], input[type=password] {
           width: 100%;
           padding: 15px;
@@ -48,23 +47,11 @@
 
       .container {
           padding: 16px;
-          background-color: #d3bc8bed;
+          background-color: #d3bc8bde
       }
 </style>
-    <body>
-        <h1>Create New Quidditch Team:</h1>
-        <form action='/teams' method="post">
-            <label><b>Team Name:</b></label>
-            <input type="text" name="name" placeholder="Enter Team Name" required>
-            <label><b>Chaser:</b></label>
-            <input type="text" name="chaser"placeholder="Enter Chaser" required>
-            <label><b>Beater:</b></label>
-            <input type="text" name="beater" placeholder="Enter Beater" required>
-            <label><b>Keeper:</b></label>
-            <input type="text" name="keeper" placeholder="Enter Keeper" required>
-            <label><b>Seeker:</b></label>
-            <input type="text" name="seeker" placeholder="Enter Seeker" required>
-            <button class="w3-button w3-teal">Submit</button>
-        </form>
+                <h1>Error!</h1>
+                <h2>You are not the team owner.</h2>
+                <button class="w3-button w3-teal"><a href='/teams'>Go Back</a></button>
     </body>
 </html>
