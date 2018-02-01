@@ -1,8 +1,8 @@
 class TeamController < ApplicationController
     
     get '/teams' do
+        @teams = Team.all
         if Helpers.logged_in?(session)
-          @teams = Team.all
           erb :'teams/teams_index'
         else
           redirect to '/login'
@@ -18,13 +18,15 @@ class TeamController < ApplicationController
     end
     
     post '/teams' do
-        team = Team.create(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker], user_id: session[:user_id])
-        team.save
-        if team.name != "" #&& team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
-          redirect to "teams/#{team.id}"
-        else
-          redirect to '/teams/new'
-        end
+        @team = Team.create(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker], user_id: session[:user_id])
+        @team.user = current_user
+        @team.save
+        #if team.name != "" #&& team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
+          #redirect to "teams/#{team.id}"
+        #else
+          #redirect to '/teams/new'
+        #end
+        redirect '/teams'
     end
     
     get '/teams/:id' do
@@ -35,6 +37,7 @@ class TeamController < ApplicationController
         redirect to '/login'
       end
     end
+
   
   get '/teams/:id/edit' do 
       if Helpers.logged_in?(session) 
@@ -48,26 +51,25 @@ class TeamController < ApplicationController
   end
   
   patch '/teams/:id' do
-    team = Team.find(params[:id])
-    team.update(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker])
-
-    if team.name != "" && team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
+    @team = Team.find_by(id: params[:id])
+    if Helpers.current_user(session) == @team.user
+    @team.update(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker])
+    @team.save
+    #if team.name != "" && team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
       redirect to "teams/#{team.id}"
     else
-      redirect to "teams/#{team.id}/edit"
+      erb :'/teams/team_error'
     end
   end
   
   delete '/teams/:id/delete' do
-    if Helpers.logged_in?(session)
-      @team = Team.find_by(id: params[:id])
-        if Helpers.current_user(session).id == @team.user_id
+    @team = Team.find_by(id: params[:id])
+    if Helpers.current_user(session) == @team.user
           @team.delete
           redirect '/teams'
-        else
-          redirect 'teams'
-        end
+    else
+       erb :'/teams/team_error'
     end
   end
-  
+
 end
