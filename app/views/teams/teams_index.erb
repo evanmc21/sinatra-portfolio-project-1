@@ -56,7 +56,6 @@
             <ol>
             <% @teams.each do |team| %>
               <h2><li>Team Name: <%= team.name %></li></h2>
-              <h3>Team Owner: <%=team.user.username%></h3>
               <button class="w3-button w3-teal"><a href='/teams/<%= team.id %>'>View Team</a></button>
               <hr>
             <% end %>
