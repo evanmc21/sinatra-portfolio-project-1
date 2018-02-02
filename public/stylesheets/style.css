@@ -4,22 +4,30 @@ body, html {
 
 body {
     text-decoration: none;
-    background-image: url('/images/QuidditchWorldCup_0.png');
+    background-image: url('/images/woncup.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 100px;
 }
 
+
 h1 {
-    color: darkred;
+    color: red;
     font-family: 'Henny Penny', cursive;
     font-size: 45px;
     text-shadow: 2px 2px #d4b049;
     text-align: center;
     margin-bottom: 15px;
     margin-top: 80px;
+} 
+
+#homepage {
+    color: #fff;
+    text-shadow: 2px 2px #dd453f;
+    
 }
+
 
 h2, h3 {
     font-family: 'Lato', sans-serif;
@@ -31,7 +39,7 @@ h2, h3 {
 
 .w3-teal, .w3-hover-teal:hover {
     color:#fff;
-    background-color: #566c46;
+    background-color: #464e6c;
 }
 
 a {
