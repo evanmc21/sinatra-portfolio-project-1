@@ -21,11 +21,6 @@ class TeamController < ApplicationController
         @team = Team.create(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker], user_id: session[:user_id])
         @team.user = Helpers.current_user(session)
         @team.save
-        #if team.name != "" #&& team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
-          #redirect to "teams/#{team.id}"
-        #else
-          #redirect to '/teams/new'
-        #end
         redirect '/teams'
     end
     
@@ -55,7 +50,6 @@ class TeamController < ApplicationController
     if Helpers.current_user(session) == @team.user
     @team.update(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker])
     @team.save
-    #if team.name != "" && team.chaser != "" && team.beater != "" && team.keeper != "" && team.seeker != ""
       redirect to "teams/#{@team.id}"
     else
       erb :'/teams/team_error'
