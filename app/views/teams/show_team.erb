@@ -11,7 +11,7 @@
             <h3>Keeper: <%= @team.keeper %></h3>
             <h3>Seeker: <%= @team.seeker %></h3>
             
-            <button class="w3-button w3-teal"><a href="/teams/<%= @team.id %>/edit">Edit My Team</a></button>
+            <button class="w3-button w3-teal"><a href="/teams/<%= @team.id %>/edit">Edit Team</a></button>
             <form action="/teams/<%= @team.id %>/delete" method ="post">
                <input id="hidden" type="hidden" name="_method" value="delete">
                <button class="w3-button w3-teal" type="submit" name="delete" value="delete">Delete Team</button>
