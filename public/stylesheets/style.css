@@ -1,22 +1,26 @@
 body, html {
     height: 100%;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
     text-decoration: none;
-    background-image: url('/images/woncup.jpg');
+    background-image: url('/images/worldcup.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 100px;
 }
 
+* {
+    box-sizing: border-box;
+}
 
 h1 {
-    color: red;
+    color: #fff;
     font-family: 'Henny Penny', cursive;
     font-size: 45px;
-    text-shadow: 2px 2px #d4b049;
+    text-shadow: 2px 2px #dd453f;
     text-align: center;
     margin-bottom: 15px;
     margin-top: 80px;
@@ -25,12 +29,14 @@ h1 {
 #homepage {
     color: #fff;
     text-shadow: 2px 2px #dd453f;
-    
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 
 h2, h3 {
     font-family: 'Lato', sans-serif;
+    color: #fff;
 }
 
 .w3-bar {
@@ -42,6 +48,21 @@ h2, h3 {
     background-color: #464e6c;
 }
 
+button {
+    background-color: #464e6c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+        
+button:hover {
+    opacity:1;
+}
+        
+
 a {
     color:#fff;
     font-family: 'Lato', sans-serif;
@@ -52,3 +73,37 @@ ol li {
     font-family: 'Lato', sans-serif;
 }
 
+p, b, label {
+    color: #fff;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 16px;
+    background-color: #29170fc4;
+}
+
+.login, .signup, .team {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+input[type=text], input[type=password] {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: block;
+          border: none;
+          background: #f1f1f1;
+      }
+      
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
