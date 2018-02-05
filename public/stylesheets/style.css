@@ -81,6 +81,12 @@ p, b, label {
     border-radius: 5px;
     padding: 16px;
     background-color: #29170fc4;
+    max-width: 500px;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .login, .signup, .team {
