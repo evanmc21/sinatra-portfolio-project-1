@@ -8,15 +8,15 @@
         <h1 class="team">Create New Quidditch Team:</h1>
         <form action='/teams' method="post">
             <label><b>Team Name:</b></label>
-            <input type="text" name="name" placeholder="Enter Team Name" required>
+            <input type="text" name="team[name]" placeholder="Enter Team Name" required>
             <label><b>Chaser:</b></label>
-            <input type="text" name="chaser"placeholder="Enter Chaser" required>
+            <input type="text" name="team[chaser]"placeholder="Enter Chaser" required>
             <label><b>Beater:</b></label>
-            <input type="text" name="beater" placeholder="Enter Beater" required>
+            <input type="text" name="team[beater]" placeholder="Enter Beater" required>
             <label><b>Keeper:</b></label>
-            <input type="text" name="keeper" placeholder="Enter Keeper" required>
+            <input type="text" name="team[keeper]" placeholder="Enter Keeper" required>
             <label><b>Seeker:</b></label>
-            <input type="text" name="seeker" placeholder="Enter Seeker" required>
+            <input type="text" name="team[seeker]" placeholder="Enter Seeker" required>
             <button class="w3-button w3-teal">Submit</button>
         </form>
     </body>
