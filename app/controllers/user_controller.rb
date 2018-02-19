@@ -16,9 +16,9 @@ class UserController < ApplicationController
         user = User.create(username: params[:username], email: params[:email], password: params[:password])
         session[:user_id] = user.id
         if Helpers.logged_in?(session)
-            redirect '/users/user_index'
+            redirect to '/users/user_index'
         else
-            erb :'users/signup_error'
+            erb :'/users/signup_error'
         end
     end
     
@@ -37,18 +37,13 @@ class UserController < ApplicationController
           session[:user_id] = user.id
           redirect to '/teams'
         else
-          erb :'users/login_error'
+          erb :'/users/login_error'
         end
     end
     
     get '/users/:slug' do
         @user = User.find_by_slug(params[:slug])
         erb :'/users/user_index'
-    end
-    
-    get '/logout' do
-        session.clear
-        redirect to '/'
     end
     
     delete '/session' do
