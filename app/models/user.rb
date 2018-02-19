@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
     has_many :teams
     has_secure_password
     validates_presence_of :username, :email, :password
+    validates :username, uniqueness: true
+    validates :email, uniqueness: true
     
     def slug
         self.username.gsub(/\s+/, '-').downcase
