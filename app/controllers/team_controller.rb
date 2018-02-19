@@ -53,8 +53,6 @@ class TeamController < ApplicationController
         erb :'/teams/team_error'
     end
   end
-  
-  params = {:team => {:name => "team name", :beater => "beater"}}
 
   delete '/teams/:id/delete' do
     @team = Team.find_by(id: params[:id])
