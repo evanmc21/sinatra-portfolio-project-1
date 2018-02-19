@@ -5,6 +5,11 @@
         <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">
     </head>
     <body>
+        <div class="flash" style="color: #fff">
+          <% if flash.has?(:message) %>
+            <%= flash[:message] %>
+          <% end %>
+          </div>
         <h1 class="team">Edit My Quidditch Team:</h1>
         <form action="/teams/<%=@team.id%>" method="post">
             <input type="hidden" name="_method" value="patch" id="hidden">

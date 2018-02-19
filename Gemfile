@@ -13,3 +13,4 @@ gem 'bcrypt'
 gem 'rack_session_access'
 gem "tux"
 gem 'learn-co'
+gem 'rack-flash3'
