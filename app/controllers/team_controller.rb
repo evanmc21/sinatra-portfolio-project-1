@@ -46,13 +46,15 @@ class TeamController < ApplicationController
   patch '/teams/:id' do
     @team = Team.find_by(id: params[:id])
     if Helpers.current_user(session) == @team.user
-      @team.update(name: params[:name],chaser: params[:chaser],beater: params[:beater],keeper: params[:keeper],seeker: params[:seeker])
+      @team.update(params[:team])
       @team.save
         redirect to "/teams/#{@team.id}"
     else
         erb :'/teams/team_error'
     end
   end
+  
+  params = {:team => {:name => "team name", :beater => "beater"}}
 
   delete '/teams/:id/delete' do
     @team = Team.find_by(id: params[:id])
