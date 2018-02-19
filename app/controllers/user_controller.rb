@@ -1,4 +1,8 @@
+require 'rack-flash'
+
 class UserController < ApplicationController
+    
+    use Rack::Flash
     
     get '/' do
         erb :index
@@ -18,7 +22,8 @@ class UserController < ApplicationController
         if Helpers.logged_in?(session)
             redirect to '/users/user_index'
         else
-            erb :'/users/signup_error'
+            flash[:message] = "Please enter a username, email and password to sign up."
+            redirect to :'/signup'
         end
     end
     
@@ -37,7 +42,8 @@ class UserController < ApplicationController
           session[:user_id] = user.id
           redirect to '/teams'
         else
-          erb :'/users/login_error'
+            flash[:message] = "Please enter a correct username and password."
+            redirect to '/login'
         end
     end
     

@@ -5,10 +5,14 @@
     <link href="https://fonts.googleapis.com/css?family=Henny+Penny|Lato:300" rel="stylesheet">
   </head>
     <body>
+      <div class="flash" style="color: #fff">
+      <% if flash.has?(:message) %>
+        <%= flash[:message] %>
+      <% end %>
+      </div>
       <form action="/login" method="post" style="border:1px solid #ccc">
         <div class="container">
           <h1 class="login">Login</h1>
-          <h3>Please fill in this form to Login.</h3>
           <hr>
           <label><b>Username:</b></label>
             <input type="text" name="username" placeholder="Enter Username" required>
